@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: pega-safado-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATA_PATH=/app/data/bens-imoveis.json
+    networks:
+      - rede-auditoria
+
+  frontend:
+    build: ./frontend
+    container_name: pega-safado-front
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - rede-auditoria
+
+networks:
+  rede-auditoria:
+    driver: bridge

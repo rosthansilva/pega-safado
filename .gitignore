@@ -1,0 +1,77 @@
+# ------------------------------------------------
+# 1. SISTEMA OPERACIONAL & IDEs
+# ------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ------------------------------------------------
+# 2. DADOS SENSÍVEIS (DATA)
+# ------------------------------------------------
+# Ignora arquivos JSON na pasta data (podem ser grandes ou sigilosos)
+data/*.json
+data/*.csv
+data/*.xlsx
+
+# Mas mantém o arquivo .gitkeep se existir (para garantir que a pasta suba)
+!data/.gitkeep
+
+# ------------------------------------------------
+# 3. BACKEND (PYTHON)
+# ------------------------------------------------
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+
+# Ambientes Virtuais (caso você crie um localmente)
+backend/venv/
+backend/.venv/
+backend/env/
+
+# Logs e Dados Locais
+backend/*.log
+backend/local_settings.py
+backend/db.sqlite3
+
+# Se usar Pytest/Coverage
+backend/.pytest_cache/
+backend/.coverage
+backend/htmlcov/
+
+# ------------------------------------------------
+# 4. FRONTEND (NODE / NEXT.JS)
+# ------------------------------------------------
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/dist/
+
+# Logs de gerenciadores de pacote
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Variáveis de Ambiente Locais (Segurança)
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# TypeScript
+frontend/*.tsbuildinfo
+
+# ------------------------------------------------
+# 5. DOCKER & BAZEL (Arquivos gerados)
+# ------------------------------------------------
+# Arquivos de override local do docker compose (não devem subir)
+docker-compose.override.yml
+
+# Se sobrar algo do Bazel antigo
+bazel-*
+.bazelversion
